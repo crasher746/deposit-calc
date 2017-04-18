@@ -1,3 +1,4 @@
+///main function
 #include <stdio.h>
 #include "deposit.h"
 
