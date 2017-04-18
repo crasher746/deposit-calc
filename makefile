@@ -1,3 +1,4 @@
+//makefile
 CC = gcc
 CFLAGS = -Wall -Werror
 TESTFLAGS = -I src -I thirdparty -Wall -Werror
