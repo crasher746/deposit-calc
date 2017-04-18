@@ -1,0 +1,939 @@
+gregory@gregory-GA-MA770-UD3:~$ cd dc
+gregory@gregory-GA-MA770-UD3:~/dc$ cd test/
+gregory@gregory-GA-MA770-UD3:~/dc/test$ gedit main.c
+gregory@gregory-GA-MA770-UD3:~/dc/test$ git status
+На ветке master
+
+Начальный коммит
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	../deposit-calc./
+	../src/
+	./
+	../thirdparty/
+
+ничего не добавлено в коммит, но есть неотслеживаемые файлы (используйте «git add», чтобы отслеживать их)
+gregory@gregory-GA-MA770-UD3:~/dc/test$ gedit main.c
+gregory@gregory-GA-MA770-UD3:~/dc/test$ git status
+На ветке master
+
+Начальный коммит
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	../deposit-calc./
+	../src/
+	./
+	../thirdparty/
+
+ничего не добавлено в коммит, но есть неотслеживаемые файлы (используйте «git add», чтобы отслеживать их)
+gregory@gregory-GA-MA770-UD3:~/dc/test$ git add main.c
+gregory@gregory-GA-MA770-UD3:~/dc/test$ git commit -m "Ctest mainc"
+[master (корневой коммит) 58405f0] Ctest mainc
+ 1 file changed, 8 insertions(+)
+ create mode 100644 test/main.c
+gregory@gregory-GA-MA770-UD3:~/dc/test$ gedit 0_deposit_test.c
+gregory@gregory-GA-MA770-UD3:~/dc/test$ git status
+На ветке master
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	../deposit-calc./
+	../src/
+	0_deposit_test.c
+	../thirdparty/
+
+ничего не добавлено в коммит, но есть неотслеживаемые файлы (используйте «git add», чтобы отслеживать их)
+gregory@gregory-GA-MA770-UD3:~/dc/test$ git add 0_deposit_test.c
+gregory@gregory-GA-MA770-UD3:~/dc/test$ git status
+На ветке master
+Изменения, которые будут включены в коммит:
+  (используйте «git reset HEAD <файл>…», чтобы убрать из индекса)
+
+	новый файл:    0_deposit_test.c
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	../deposit-calc./
+	../src/
+	../thirdparty/
+
+gregory@gregory-GA-MA770-UD3:~/dc/test$ git commit -m "First test"
+[master 48a11ce] First test
+ 1 file changed, 58 insertions(+)
+ create mode 100644 test/0_deposit_test.c
+gregory@gregory-GA-MA770-UD3:~/dc/test$ gedit 1_deposit_test.c
+gregory@gregory-GA-MA770-UD3:~/dc/test$ git status
+На ветке master
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	../deposit-calc./
+	../src/
+	1_deposit_test.c
+	../thirdparty/
+
+ничего не добавлено в коммит, но есть неотслеживаемые файлы (используйте «git add», чтобы отслеживать их)
+gregory@gregory-GA-MA770-UD3:~/dc/test$ git add 1_deposit_test.c
+gregory@gregory-GA-MA770-UD3:~/dc/test$ git status
+На ветке master
+Изменения, которые будут включены в коммит:
+  (используйте «git reset HEAD <файл>…», чтобы убрать из индекса)
+
+	новый файл:    1_deposit_test.c
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	../deposit-calc./
+	../src/
+	../thirdparty/
+
+gregory@gregory-GA-MA770-UD3:~/dc/test$ git commit -m "Input Test"
+[master e496478] Input Test
+ 1 file changed, 44 insertions(+)
+ create mode 100644 test/1_deposit_test.c
+gregory@gregory-GA-MA770-UD3:~/dc/test$ cd 
+gregory@gregory-GA-MA770-UD3:~$ cd dc
+gregory@gregory-GA-MA770-UD3:~/dc$ cd src/
+gregory@gregory-GA-MA770-UD3:~/dc/src$ gedit deposit.c
+gregory@gregory-GA-MA770-UD3:~/dc/src$ git status
+На ветке master
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	../deposit-calc./
+	./
+	../thirdparty/
+
+ничего не добавлено в коммит, но есть неотслеживаемые файлы (используйте «git add», чтобы отслеживать их)
+gregory@gregory-GA-MA770-UD3:~/dc/src$ gedit deposit.c
+gregory@gregory-GA-MA770-UD3:~/dc/src$ git add deposit.c
+gregory@gregory-GA-MA770-UD3:~/dc/src$ git commit -m "Rework programm"
+[master 90b73cb] Rework programm
+ 1 file changed, 24 insertions(+)
+ create mode 100644 src/deposit.c
+gregory@gregory-GA-MA770-UD3:~/dc/src$ cd
+gregory@gregory-GA-MA770-UD3:~$ cd dc
+gregory@gregory-GA-MA770-UD3:~/dc$ gedit makefile
+gregory@gregory-GA-MA770-UD3:~/dc$ make
+mkdir build
+gcc -Wall -Werror -c src/main.c -o build/src/main.o
+Assembler messages:
+Fatal error: can't create build/src/main.o: Нет такого файла или каталога
+makefile:15: ошибка выполнения рецепта для цели «build/src/main.o»
+make: *** [build/src/main.o] Ошибка 1
+gregory@gregory-GA-MA770-UD3:~/dc$ gedit makefile
+gregory@gregory-GA-MA770-UD3:~/dc$ make
+mkdir build
+mkdir bin
+gcc -Wall -Werror -c src/main.c -o build/src/main.o
+Assembler messages:
+Fatal error: can't create build/src/main.o: Нет такого файла или каталога
+makefile:15: ошибка выполнения рецепта для цели «build/src/main.o»
+make: *** [build/src/main.o] Ошибка 1
+gregory@gregory-GA-MA770-UD3:~/dc$ gedit makefile
+gregory@gregory-GA-MA770-UD3:~/dc$ make
+mkdir build
+mkdir bin
+gcc -Wall -Werror -c src/main.c -o src/main.o
+gcc -Wall -Werror -c src/deposit.c -o src/deposit.o
+src/deposit.c: In function ‘Input’:
+src/deposit.c:6:60: error: ‘return’ with a value, in function returning void [-Werror]
+  if (*term < 0 || *term > 365 || *contrib < 1000.0) return 1;
+                                                            ^
+src/deposit.c:7:9: error: ‘return’ with a value, in function returning void [-Werror]
+  return 0;
+         ^
+src/deposit.c: In function ‘Process’:
+src/deposit.c:23:9: error: ‘return’ with a value, in function returning void [-Werror]
+  return contrib;
+         ^
+cc1: all warnings being treated as errors
+makefile:20: ошибка выполнения рецепта для цели «src/deposit.o»
+make: *** [src/deposit.o] Ошибка 1
+gregory@gregory-GA-MA770-UD3:~/dc$ cd src/
+gregory@gregory-GA-MA770-UD3:~/dc/src$ gedit deposit.c
+gregory@gregory-GA-MA770-UD3:~/dc/src$ git status
+На ветке master
+Изменения, которые не в индексе для коммита:
+  (используйте «git add <файл>…», чтобы добавить файл в индекс)
+  (используйте «git checkout -- <файл>…», чтобы отменить изменения
+   в рабочем каталоге)
+
+	изменено:      deposit.c
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	../deposit-calc./
+	../makefile
+	deposit.h
+	main.c
+	main.o
+	../thirdparty/
+
+нет изменений добавленных для коммита
+(используйте «git add» и/или «git commit -a»)
+gregory@gregory-GA-MA770-UD3:~/dc/src$ git status
+На ветке master
+Изменения, которые не в индексе для коммита:
+  (используйте «git add <файл>…», чтобы добавить файл в индекс)
+  (используйте «git checkout -- <файл>…», чтобы отменить изменения
+   в рабочем каталоге)
+
+	изменено:      deposit.c
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	../deposit-calc./
+	../makefile
+	deposit.h
+	main.c
+	main.o
+	../thirdparty/
+
+нет изменений добавленных для коммита
+(используйте «git add» и/или «git commit -a»)
+gregory@gregory-GA-MA770-UD3:~/dc/src$ git add deposit.h
+gregory@gregory-GA-MA770-UD3:~/dc/src$ git commit -m "Deposit include"
+[master b47d682] Deposit include
+ 1 file changed, 7 insertions(+)
+ create mode 100644 src/deposit.h
+gregory@gregory-GA-MA770-UD3:~/dc/src$ git add main.c
+gregory@gregory-GA-MA770-UD3:~/dc/src$ git status
+На ветке master
+Изменения, которые будут включены в коммит:
+  (используйте «git reset HEAD <файл>…», чтобы убрать из индекса)
+
+	новый файл:    main.c
+
+Изменения, которые не в индексе для коммита:
+  (используйте «git add <файл>…», чтобы добавить файл в индекс)
+  (используйте «git checkout -- <файл>…», чтобы отменить изменения
+   в рабочем каталоге)
+
+	изменено:      deposit.c
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	../deposit-calc./
+	../makefile
+	main.o
+	../thirdparty/
+
+gregory@gregory-GA-MA770-UD3:~/dc/src$ git commit -m "Edit main.c"
+[master 596fe79] Edit main.c
+ 1 file changed, 19 insertions(+)
+ create mode 100644 src/main.c
+gregory@gregory-GA-MA770-UD3:~/dc/src$ git add deposit.c
+gregory@gregory-GA-MA770-UD3:~/dc/src$ git commit -m "Edit deposit"
+[master 87d8801] Edit deposit
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+gregory@gregory-GA-MA770-UD3:~/dc/src$ git status
+На ветке master
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	../deposit-calc./
+	../makefile
+	main.o
+	../thirdparty/
+
+ничего не добавлено в коммит, но есть неотслеживаемые файлы (используйте «git add», чтобы отслеживать их)
+gregory@gregory-GA-MA770-UD3:~/dc/src$ cd 
+gregory@gregory-GA-MA770-UD3:~$ cd dc
+gregory@gregory-GA-MA770-UD3:~/dc$ make
+mkdir build
+mkdir bin
+gcc -Wall -Werror -c src/main.c -o src/main.o
+src/main.c: In function ‘main’:
+src/main.c:13:9: error: passing argument 1 of ‘Input’ makes integer from pointer without a cast [-Werror=int-conversion]
+  Input (&term, &contrib);
+         ^
+In file included from src/main.c:2:0:
+src/deposit.h:4:5: note: expected ‘int’ but argument is of type ‘int *’
+ int Input (int, int);
+     ^
+src/main.c:13:16: error: passing argument 2 of ‘Input’ makes integer from pointer without a cast [-Werror=int-conversion]
+  Input (&term, &contrib);
+                ^
+In file included from src/main.c:2:0:
+src/deposit.h:4:5: note: expected ‘int’ but argument is of type ‘float *’
+ int Input (int, int);
+     ^
+src/main.c:14:11: error: passing argument 1 of ‘Process’ makes integer from pointer without a cast [-Werror=int-conversion]
+  Process (&term, &contrib);
+           ^
+In file included from src/main.c:2:0:
+src/deposit.h:5:5: note: expected ‘int’ but argument is of type ‘int *’
+ int Process (int, int);
+     ^
+src/main.c:14:18: error: passing argument 2 of ‘Process’ makes integer from pointer without a cast [-Werror=int-conversion]
+  Process (&term, &contrib);
+                  ^
+In file included from src/main.c:2:0:
+src/deposit.h:5:5: note: expected ‘int’ but argument is of type ‘float *’
+ int Process (int, int);
+     ^
+cc1: all warnings being treated as errors
+makefile:15: ошибка выполнения рецепта для цели «src/main.o»
+make: *** [src/main.o] Ошибка 1
+gregory@gregory-GA-MA770-UD3:~/dc$ git status
+На ветке master
+Изменения, которые не в индексе для коммита:
+  (используйте «git add <файл>…», чтобы добавить файл в индекс)
+  (используйте «git checkout -- <файл>…», чтобы отменить изменения
+   в рабочем каталоге)
+
+	изменено:      src/deposit.c
+	изменено:      src/main.c
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	deposit-calc./
+	makefile
+	thirdparty/
+
+нет изменений добавленных для коммита
+(используйте «git add» и/или «git commit -a»)
+gregory@gregory-GA-MA770-UD3:~/dc$ dc src/
+dc: Will not attempt to process directory src/
+gregory@gregory-GA-MA770-UD3:~/dc$ git status
+На ветке master
+Изменения, которые не в индексе для коммита:
+  (используйте «git add <файл>…», чтобы добавить файл в индекс)
+  (используйте «git checkout -- <файл>…», чтобы отменить изменения
+   в рабочем каталоге)
+
+	изменено:      src/deposit.c
+	изменено:      src/main.c
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	deposit-calc./
+	makefile
+	thirdparty/
+
+нет изменений добавленных для коммита
+(используйте «git add» и/или «git commit -a»)
+gregory@gregory-GA-MA770-UD3:~/dc$ git add deposit.c
+fatal: спецификация пути «deposit.c» не соответствует ни одному файлу
+gregory@gregory-GA-MA770-UD3:~/dc$ cd src/
+gregory@gregory-GA-MA770-UD3:~/dc/src$ git add deposit.c
+gregory@gregory-GA-MA770-UD3:~/dc/src$ git commit -m "Edit_1"
+[master b086339] Edit_1
+ 1 file changed, 26 insertions(+), 26 deletions(-)
+ rewrite src/deposit.c (74%)
+gregory@gregory-GA-MA770-UD3:~/dc/src$ git add main.c
+gregory@gregory-GA-MA770-UD3:~/dc/src$ git commit -m "Edit main _ 1"
+[master 5aa7964] Edit main _ 1
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+gregory@gregory-GA-MA770-UD3:~/dc/src$ cd 
+gregory@gregory-GA-MA770-UD3:~$ cd dc 
+gregory@gregory-GA-MA770-UD3:~/dc$ make
+mkdir build
+mkdir: невозможно создать каталог «build»: Файл существует
+makefile:15: ошибка выполнения рецепта для цели «src/main.o»
+make: *** [src/main.o] Ошибка 1
+gregory@gregory-GA-MA770-UD3:~/dc$ make
+mkdir build
+mkdir bin
+gcc -Wall -Werror -c src/main.c -o src/main.o
+gcc -Wall -Werror -c src/deposit.c -o src/deposit.o
+gcc -I src -I thirdparty -Wall -Werror -c test/main.c -o test/main.o
+gcc -I src -I thirdparty -Wall -Werror -c test/0_deposit_test.c -o test/0_deposit_test.o
+gcc -I src -I thirdparty -Wall -Werror -c test/1_deposit_test.c -o test/1_deposit_test.o
+gcc src/deposit.o test/main.o test/0_deposit_test.o test/1_deposit_test.o -o bin/test
+gcc src/main.o src/deposit.o -o bin/prog
+gregory@gregory-GA-MA770-UD3:~/dc$ cd bin/
+gregory@gregory-GA-MA770-UD3:~/dc/bin$ ./test
+TEST 1/14 RangeContribTest:LeftRangePoint1 [OK]
+TEST 2/14 RangeContribTest:RightRangePoint1 [OK]
+TEST 3/14 RangeContribTest:LeftRangePoint2 [OK]
+TEST 4/14 RangeContribTest:RightRangePoint2 [OK]
+TEST 5/14 RangeContribTest:LeftRangePoint3 [OK]
+TEST 6/14 RangeContribTest:RightRangePoint3 [OK]
+TEST 7/14 RangeContribTest:LeftRangePoint4 [OK]
+TEST 8/14 RangeContribTest:RightRangePoint4 [OK]
+TEST 9/14 CorrectnessOfDataEntry:WrongTermWrongContrib [OK]
+TEST 10/14 CorrectnessOfDataEntry:WrongTerm1WrongContrib1 [OK]
+TEST 11/14 CorrectnessOfDataEntry:WrongTermTrueContrib [OK]
+TEST 12/14 CorrectnessOfDataEntry:WrongTerm1TrueContrib [OK]
+TEST 13/14 CorrectnessOfDataEntry:TrueTermWrongContrib [OK]
+TEST 14/14 CorrectnessOfDataEntry:TrueTermTrueContrib [FAIL]
+  ERR: test/1_deposit_test.c:43  expected 0, got 1
+RESULTS: 14 tests (13 ok, 1 failed, 0 skipped) ran in 0 ms
+gregory@gregory-GA-MA770-UD3:~/dc/bin$ cd
+gregory@gregory-GA-MA770-UD3:~$ q
+Приложение 'q' может быть найдено в следующих пакетах:
+ * python-q-text-as-data
+ * python3-q-text-as-data
+Попробуйте: sudo apt install <выбранный пакет>
+gregory@gregory-GA-MA770-UD3:~$ cd dc
+gregory@gregory-GA-MA770-UD3:~/dc$ git status
+На ветке master
+Изменения, которые не в индексе для коммита:
+  (используйте «git add <файл>…», чтобы добавить файл в индекс)
+  (используйте «git checkout -- <файл>…», чтобы отменить изменения
+   в рабочем каталоге)
+
+	изменено:      test/1_deposit_test.c
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	bin/
+	deposit-calc./
+	makefile
+	src/deposit.o
+	src/main.o
+	test/0_deposit_test.o
+	test/1_deposit_test.o
+	test/main.o
+	thirdparty/
+
+нет изменений добавленных для коммита
+(используйте «git add» и/или «git commit -a»)
+gregory@gregory-GA-MA770-UD3:~/dc$ make clean
+rm -rf *.o *.exe
+gregory@gregory-GA-MA770-UD3:~/dc$ cd test
+gregory@gregory-GA-MA770-UD3:~/dc/test$ git status
+На ветке master
+Изменения, которые не в индексе для коммита:
+  (используйте «git add <файл>…», чтобы добавить файл в индекс)
+  (используйте «git checkout -- <файл>…», чтобы отменить изменения
+   в рабочем каталоге)
+
+	изменено:      1_deposit_test.c
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	../bin/
+	../deposit-calc./
+	../makefile
+	../src/deposit.o
+	../src/main.o
+	0_deposit_test.o
+	1_deposit_test.o
+	main.o
+	../thirdparty/
+
+нет изменений добавленных для коммита
+(используйте «git add» и/или «git commit -a»)
+gregory@gregory-GA-MA770-UD3:~/dc/test$ git add 1_deposit_test.c
+gregory@gregory-GA-MA770-UD3:~/dc/test$ git commit -m "Edit_2"
+[master d47c232] Edit_2
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+gregory@gregory-GA-MA770-UD3:~/dc/test$ cd
+gregory@gregory-GA-MA770-UD3:~$ dc dc
+dc: Will not attempt to process directory dc
+gregory@gregory-GA-MA770-UD3:~$ cd dc
+gregory@gregory-GA-MA770-UD3:~/dc$ gedit makefile
+gregory@gregory-GA-MA770-UD3:~/dc$ make
+mkdir build
+mkdir: невозможно создать каталог «build»: Файл существует
+makefile:15: ошибка выполнения рецепта для цели «build/src/main.o»
+make: *** [build/src/main.o] Ошибка 1
+gregory@gregory-GA-MA770-UD3:~/dc$ make
+mkdir build
+mkdir bin
+gcc -Wall -Werror -c src/main.c -o build/src/main.o
+Assembler messages:
+Fatal error: can't create build/src/main.o: Нет такого файла или каталога
+makefile:15: ошибка выполнения рецепта для цели «build/src/main.o»
+make: *** [build/src/main.o] Ошибка 1
+gregory@gregory-GA-MA770-UD3:~/dc$ gedit makefile
+gregory@gregory-GA-MA770-UD3:~/dc$ make
+mkdir build
+mkdir bin
+gcc -Wall -Werror -c src/main.c -o src/main.o
+gcc -Wall -Werror -c src/deposit.c -o src/deposit.o
+gcc -I src -I thirdparty -Wall -Werror -c test/main.c -o test/main.o
+gcc -I src -I thirdparty -Wall -Werror -c test/0_deposit_test.c -o test/0_deposit_test.o
+gcc -I src -I thirdparty -Wall -Werror -c test/1_deposit_test.c -o test/1_deposit_test.o
+gcc src/deposit.o test/main.o test/0_deposit_test.o test/1_deposit_test.o -o bin/test
+gcc src/main.o src/deposit.o -o bin/prog
+gregory@gregory-GA-MA770-UD3:~/dc$ cd bin
+gregory@gregory-GA-MA770-UD3:~/dc/bin$ ./test
+TEST 1/14 RangeContribTest:LeftRangePoint1 [OK]
+TEST 2/14 RangeContribTest:RightRangePoint1 [OK]
+TEST 3/14 RangeContribTest:LeftRangePoint2 [OK]
+TEST 4/14 RangeContribTest:RightRangePoint2 [OK]
+TEST 5/14 RangeContribTest:LeftRangePoint3 [OK]
+TEST 6/14 RangeContribTest:RightRangePoint3 [OK]
+TEST 7/14 RangeContribTest:LeftRangePoint4 [OK]
+TEST 8/14 RangeContribTest:RightRangePoint4 [OK]
+TEST 9/14 CorrectnessOfDataEntry:WrongTermWrongContrib [OK]
+TEST 10/14 CorrectnessOfDataEntry:WrongTerm1WrongContrib1 [OK]
+TEST 11/14 CorrectnessOfDataEntry:WrongTermTrueContrib [OK]
+TEST 12/14 CorrectnessOfDataEntry:WrongTerm1TrueContrib [OK]
+TEST 13/14 CorrectnessOfDataEntry:TrueTermWrongContrib [OK]
+TEST 14/14 CorrectnessOfDataEntry:TrueTermTrueContrib [OK]
+RESULTS: 14 tests (14 ok, 0 failed, 0 skipped) ran in 0 ms
+gregory@gregory-GA-MA770-UD3:~/dc/bin$ cd
+gregory@gregory-GA-MA770-UD3:~$ cd dc
+gregory@gregory-GA-MA770-UD3:~/dc$ make clean
+rm -rf *.o *.exe bin/* build/*.o
+gregory@gregory-GA-MA770-UD3:~/dc$ gedit makefile
+gregory@gregory-GA-MA770-UD3:~/dc$ gedit makefile
+gregory@gregory-GA-MA770-UD3:~/dc$ make
+make: *** Нет правила для сборки цели «src/main.c», требуемой для «build/src/main.o».  Останов.
+gregory@gregory-GA-MA770-UD3:~/dc$ gedit makefile
+gregory@gregory-GA-MA770-UD3:~/dc$ make
+mkdir build/test
+mkdir: невозможно создать каталог «build/test»: Нет такого файла или каталога
+makefile:16: ошибка выполнения рецепта для цели «build/src/main.o»
+make: *** [build/src/main.o] Ошибка 1
+gregory@gregory-GA-MA770-UD3:~/dc$ gedit makefile
+gregory@gregory-GA-MA770-UD3:~/dc$ make
+mkdir build	
+mkdir build/test
+mkdir build/src
+mkdir bin
+gcc -Wall -Werror -c src/main.c -o build/src/main.o
+gcc -Wall -Werror -c src/deposit.c -o build/src/deposit.o
+gcc -I src -I thirdparty -Wall -Werror -c test/main.c -o build/test/main.o
+gcc -I src -I thirdparty -Wall -Werror -c test/0_deposit_test.c -o build/test/0_deposit_test.o
+gcc -I src -I thirdparty -Wall -Werror -c test/1_deposit_test.c -o build/test/1_deposit_test.o
+gcc build/src/deposit.o build/test/main.o build/test/0_deposit_test.o build/test/1_deposit_test.o -o bin/test
+gcc build/src/main.o build/src/deposit.o -o bin/prog
+gregory@gregory-GA-MA770-UD3:~/dc$ cd bin
+gregory@gregory-GA-MA770-UD3:~/dc/bin$ ./test
+TEST 1/14 RangeContribTest:LeftRangePoint1 [OK]
+TEST 2/14 RangeContribTest:RightRangePoint1 [OK]
+TEST 3/14 RangeContribTest:LeftRangePoint2 [OK]
+TEST 4/14 RangeContribTest:RightRangePoint2 [OK]
+TEST 5/14 RangeContribTest:LeftRangePoint3 [OK]
+TEST 6/14 RangeContribTest:RightRangePoint3 [OK]
+TEST 7/14 RangeContribTest:LeftRangePoint4 [OK]
+TEST 8/14 RangeContribTest:RightRangePoint4 [OK]
+TEST 9/14 CorrectnessOfDataEntry:WrongTermWrongContrib [OK]
+TEST 10/14 CorrectnessOfDataEntry:WrongTerm1WrongContrib1 [OK]
+TEST 11/14 CorrectnessOfDataEntry:WrongTermTrueContrib [OK]
+TEST 12/14 CorrectnessOfDataEntry:WrongTerm1TrueContrib [OK]
+TEST 13/14 CorrectnessOfDataEntry:TrueTermWrongContrib [OK]
+TEST 14/14 CorrectnessOfDataEntry:TrueTermTrueContrib [OK]
+RESULTS: 14 tests (14 ok, 0 failed, 0 skipped) ran in 0 ms
+gregory@gregory-GA-MA770-UD3:~/dc/bin$ ./prog
+Enter the amount of your deposit: 1000
+Enter the term of the deposit: 200
+Term: 200 
+Contribution: 1060
+gregory@gregory-GA-MA770-UD3:~/dc/bin$ cd
+gregory@gregory-GA-MA770-UD3:~$ cd dc
+gregory@gregory-GA-MA770-UD3:~/dc$ gedit makefile
+gregory@gregory-GA-MA770-UD3:~/dc$ make clean
+rm -rf *.o *.exe bin/* build/src/*.o build/test/*.o
+gregory@gregory-GA-MA770-UD3:~/dc$ make
+mkdir build	
+mkdir: невозможно создать каталог «build»: Файл существует
+makefile:16: ошибка выполнения рецепта для цели «build/src/main.o»
+make: *** [build/src/main.o] Ошибка 1
+gregory@gregory-GA-MA770-UD3:~/dc$ gedit makefile
+gregory@gregory-GA-MA770-UD3:~/dc$ make
+mkdir -p build	
+mkdir -p build/test
+mkdir -p build/src
+mkdir -p bin
+gcc -Wall -Werror -c src/main.c -o build/src/main.o
+gcc -Wall -Werror -c src/deposit.c -o build/src/deposit.o
+gcc -I src -I thirdparty -Wall -Werror -c test/main.c -o build/test/main.o
+gcc -I src -I thirdparty -Wall -Werror -c test/0_deposit_test.c -o build/test/0_deposit_test.o
+gcc -I src -I thirdparty -Wall -Werror -c test/1_deposit_test.c -o build/test/1_deposit_test.o
+gcc build/src/deposit.o build/test/main.o build/test/0_deposit_test.o build/test/1_deposit_test.o -o bin/test
+gcc build/src/main.o build/src/deposit.o -o bin/prog
+gregory@gregory-GA-MA770-UD3:~/dc$ make clean
+rm -rf *.o *.exe bin/* build/src/*.o build/test/*.o
+gregory@gregory-GA-MA770-UD3:~/dc$ git status
+На ветке master
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	deposit-calc./
+	makefile
+	thirdparty/
+
+ничего не добавлено в коммит, но есть неотслеживаемые файлы (используйте «git add», чтобы отслеживать их)
+gregory@gregory-GA-MA770-UD3:~/dc$ git add makefile
+gregory@gregory-GA-MA770-UD3:~/dc$ git commit -m "Work makefile"
+[master 59bf0a4] Work makefile
+ 1 file changed, 44 insertions(+)
+ create mode 100644 makefile
+gregory@gregory-GA-MA770-UD3:~/dc$ cd thirdparty/
+gregory@gregory-GA-MA770-UD3:~/dc/thirdparty$ git status
+На ветке master
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	../deposit-calc./
+	./
+
+ничего не добавлено в коммит, но есть неотслеживаемые файлы (используйте «git add», чтобы отслеживать их)
+gregory@gregory-GA-MA770-UD3:~/dc/thirdparty$ cd
+gregory@gregory-GA-MA770-UD3:~$ cd clony
+gregory@gregory-GA-MA770-UD3:~/clony$ git clone https://github.com/Gregorymaltsev/deposit-calc..git
+Клонирование в «deposit-calc.»…
+remote: Counting objects: 83, done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 83 (delta 2), reused 0 (delta 0), pack-reused 75
+Распаковка объектов: 100% (83/83), готово.
+Проверка соединения… готово.
+gregory@gregory-GA-MA770-UD3:~/clony$ cd
+gregory@gregory-GA-MA770-UD3:~$ cd dc
+gregory@gregory-GA-MA770-UD3:~/dc$ git push https://github.com/crasher746/deposit-calc.git
+warning: push.default не установлен; его неявное значение было изменено в Git версии 2.0 с «matching» на «simple». Чтобы прекратить вывод этого сообщения и сохранить старое поведение, используйте:
+
+  git config --global push.default matching
+
+Чтобы прекратить вывод этого сообщения и использовать новое поведение, используйте:
+
+  git config --global push.default simple
+
+Когда push.default установлено в «matching», git будет отправлять изменения локальных веток в существующие внешние ветки с таким же именем.
+
+Начиная с Git версии 2.0, по умолчанию используется более консервативное поведение «simple», которое отправляет изменения текущей ветки в соответствующую внешнюю ветку, из которой «git pull» забирает изменения.
+
+Смотрите «git help config» и ищите «push.default» для дополнительной информации.
+(режим «simple» появился в Git версии 1.7.11. Используйте похожий режим «current» вместо «simple», если вы иногда используете старые версии Git)
+
+fatal: Текущая ветка master не имеет вышестоящей ветки.
+Чтобы отправить текущую ветку и установить внешнюю ветку как вышестоящую для этой ветки, используйте
+
+    git push --set-upstream https://github.com/crasher746/deposit-calc.git master
+
+gregory@gregory-GA-MA770-UD3:~/dc$ git push --set-upstream https://github.com/crasher746/deposit-calc.git master
+Username for 'https://github.com': Crasher746@gmail.com
+Password for 'https://Crasher746@gmail.com@github.com': 
+To https://github.com/crasher746/deposit-calc.git
+ ! [rejected]        master -> master (fetch first)
+error: не удалось отправить некоторые ссылки в «https://github.com/crasher746/deposit-calc.git»
+подсказка: Обновления были отклонены, так как внешний репозиторий содержит
+подсказка: изменения, которых у вас нет в вашем локальном репозитории.
+подсказка: Обычно, это связанно с тем, что кто-то уже отправил изменения в 
+подсказка: то же место. Перед повторной отправкой ваших изменений, вам нужно
+подсказка: забрать и слить изменения из внешнего репозитория себе
+подсказка: (например, с помощью «git pull …»).
+подсказка: Для дополнительной информации смотрите «Note about fast-forwards»
+подсказка: в «git push --help».
+gregory@gregory-GA-MA770-UD3:~/dc$ git clone https://github.com/crasher746/deposit-calc.git
+Клонирование в «deposit-calc»…
+remote: Counting objects: 5, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 5 (delta 0), reused 3 (delta 0), pack-reused 0
+Распаковка объектов: 100% (5/5), готово.
+Проверка соединения… готово.
+gregory@gregory-GA-MA770-UD3:~/dc$ git push https://github.com/crasher746/deposit-calc.git
+warning: push.default не установлен; его неявное значение было изменено в Git версии 2.0 с «matching» на «simple». Чтобы прекратить вывод этого сообщения и сохранить старое поведение, используйте:
+
+  git config --global push.default matching
+
+Чтобы прекратить вывод этого сообщения и использовать новое поведение, используйте:
+
+  git config --global push.default simple
+
+Когда push.default установлено в «matching», git будет отправлять изменения локальных веток в существующие внешние ветки с таким же именем.
+
+Начиная с Git версии 2.0, по умолчанию используется более консервативное поведение «simple», которое отправляет изменения текущей ветки в соответствующую внешнюю ветку, из которой «git pull» забирает изменения.
+
+Смотрите «git help config» и ищите «push.default» для дополнительной информации.
+(режим «simple» появился в Git версии 1.7.11. Используйте похожий режим «current» вместо «simple», если вы иногда используете старые версии Git)
+
+fatal: Текущая ветка master не имеет вышестоящей ветки.
+Чтобы отправить текущую ветку и установить внешнюю ветку как вышестоящую для этой ветки, используйте
+
+    git push --set-upstream https://github.com/crasher746/deposit-calc.git master
+
+gregory@gregory-GA-MA770-UD3:~/dc$ ^C
+gregory@gregory-GA-MA770-UD3:~/dc$ git push --set-upstream https://github.com/crasher746/deposit-calc.git master
+Username for 'https://github.com': Crasher746@gmail.com
+Password for 'https://Crasher746@gmail.com@github.com': 
+To https://github.com/crasher746/deposit-calc.git
+ ! [rejected]        master -> master (fetch first)
+error: не удалось отправить некоторые ссылки в «https://github.com/crasher746/deposit-calc.git»
+подсказка: Обновления были отклонены, так как внешний репозиторий содержит
+подсказка: изменения, которых у вас нет в вашем локальном репозитории.
+подсказка: Обычно, это связанно с тем, что кто-то уже отправил изменения в 
+подсказка: то же место. Перед повторной отправкой ваших изменений, вам нужно
+подсказка: забрать и слить изменения из внешнего репозитория себе
+подсказка: (например, с помощью «git pull …»).
+подсказка: Для дополнительной информации смотрите «Note about fast-forwards»
+подсказка: в «git push --help».
+gregory@gregory-GA-MA770-UD3:~/dc$ cd deposit-calc/
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc$ git push --set-upstream https://github.com/crasher746/deposit-calc.git master
+Username for 'https://github.com': Crasher746@gmail.com
+Password for 'https://Crasher746@gmail.com@github.com': 
+Ветка master отслеживает внешнюю ветку master из https://github.com/crasher746/deposit-calc.git.
+Everything up-to-date
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc$ git pull https://github.com/crasher746/deposit-calc.git
+Из https://github.com/crasher746/deposit-calc
+ * branch            master     -> FETCH_HEAD
+Already up-to-date.
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc$ git push https://github.com/crasher746/deposit-calc.git
+warning: push.default не установлен; его неявное значение было изменено в Git версии 2.0 с «matching» на «simple». Чтобы прекратить вывод этого сообщения и сохранить старое поведение, используйте:
+
+  git config --global push.default matching
+
+Чтобы прекратить вывод этого сообщения и использовать новое поведение, используйте:
+
+  git config --global push.default simple
+
+Когда push.default установлено в «matching», git будет отправлять изменения локальных веток в существующие внешние ветки с таким же именем.
+
+Начиная с Git версии 2.0, по умолчанию используется более консервативное поведение «simple», которое отправляет изменения текущей ветки в соответствующую внешнюю ветку, из которой «git pull» забирает изменения.
+
+Смотрите «git help config» и ищите «push.default» для дополнительной информации.
+(режим «simple» появился в Git версии 1.7.11. Используйте похожий режим «current» вместо «simple», если вы иногда используете старые версии Git)
+
+Username for 'https://github.com': Crasher746@gmail.com
+Password for 'https://Crasher746@gmail.com@github.com': 
+Everything up-to-date
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc$ git push https://github.com/crasher746/TestsLab.git
+warning: push.default не установлен; его неявное значение было изменено в Git версии 2.0 с «matching» на «simple». Чтобы прекратить вывод этого сообщения и сохранить старое поведение, используйте:
+
+  git config --global push.default matching
+
+Чтобы прекратить вывод этого сообщения и использовать новое поведение, используйте:
+
+  git config --global push.default simple
+
+Когда push.default установлено в «matching», git будет отправлять изменения локальных веток в существующие внешние ветки с таким же именем.
+
+Начиная с Git версии 2.0, по умолчанию используется более консервативное поведение «simple», которое отправляет изменения текущей ветки в соответствующую внешнюю ветку, из которой «git pull» забирает изменения.
+
+Смотрите «git help config» и ищите «push.default» для дополнительной информации.
+(режим «simple» появился в Git версии 1.7.11. Используйте похожий режим «current» вместо «simple», если вы иногда используете старые версии Git)
+
+Username for 'https://github.com': Crasher746@gmail.com
+Password for 'https://Crasher746@gmail.com@github.com': 
+Подсчет объектов: 5, готово.
+Delta compression using up to 4 threads.
+Сжатие объектов: 100% (2/2), готово.
+Запись объектов: 100% (5/5), 413 bytes | 0 bytes/s, готово.
+Total 5 (delta 0), reused 0 (delta 0)
+To https://github.com/crasher746/TestsLab.git
+ * [new branch]      master -> master
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc$ git status
+На ветке master
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	makefile
+	src/
+	test/
+	thirdparty/
+
+ничего не добавлено в коммит, но есть неотслеживаемые файлы (используйте «git add», чтобы отслеживать их)
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc$ git add makefile
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc$ git commit -m "Makefile_w"
+[master 160bbd0] Makefile_w
+ 1 file changed, 44 insertions(+)
+ create mode 100644 makefile
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc$ cd src
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/src$ git status
+На ветке master
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	./
+	../test/
+	../thirdparty/
+
+ничего не добавлено в коммит, но есть неотслеживаемые файлы (используйте «git add», чтобы отслеживать их)
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/src$ git add deposit.c
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/src$ git commit -m "Edit"
+[master d55a04f] Edit
+ 1 file changed, 26 insertions(+)
+ create mode 100644 src/deposit.c
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/src$ git add deposit.h
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/src$ git commit -m "Edit_1"
+[master 752586c] Edit_1
+ 1 file changed, 7 insertions(+)
+ create mode 100644 src/deposit.h
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/src$ git add main.c
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/src$ git commit -m "Edit_2"
+[master 83c9c68] Edit_2
+ 1 file changed, 19 insertions(+)
+ create mode 100644 src/main.c
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/src$ cd
+gregory@gregory-GA-MA770-UD3:~$ cd dc
+gregory@gregory-GA-MA770-UD3:~/dc$ cd deposit-calc/
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc$ git status
+На ветке master
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	test/
+	thirdparty/
+
+ничего не добавлено в коммит, но есть неотслеживаемые файлы (используйте «git add», чтобы отслеживать их)
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc$ cd thirdparty/
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/thirdparty$ git status
+На ветке master
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	../test/
+	./
+
+ничего не добавлено в коммит, но есть неотслеживаемые файлы (используйте «git add», чтобы отслеживать их)
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/thirdparty$ git add ctest.h
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/thirdparty$ git commit -m "Edit_3"
+[master 667cf2a] Edit_3
+ 1 file changed, 566 insertions(+)
+ create mode 100644 thirdparty/ctest.h
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/thirdparty$ cd
+gregory@gregory-GA-MA770-UD3:~$ cd dc
+gregory@gregory-GA-MA770-UD3:~/dc$ cd deposit-calc/
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc$ git status
+На ветке master
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	test/
+
+ничего не добавлено в коммит, но есть неотслеживаемые файлы (используйте «git add», чтобы отслеживать их)
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc$ cd test/
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/test$ git add main.c
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/test$ git commit -m "Edit_4"
+[master e6bed0f] Edit_4
+ 1 file changed, 8 insertions(+)
+ create mode 100644 test/main.c
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/test$ git add 0_deposit_test.c
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/test$ git commit -m "Edit_5"
+[master 77157fb] Edit_5
+ 1 file changed, 58 insertions(+)
+ create mode 100644 test/0_deposit_test.c
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/test$ git add 1_deposit_test.c
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/test$ git commit -m "Edit_6"
+[master 5b59e97] Edit_6
+ 1 file changed, 44 insertions(+)
+ create mode 100644 test/1_deposit_test.c
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/test$ cd
+gregory@gregory-GA-MA770-UD3:~$ cd dc
+gregory@gregory-GA-MA770-UD3:~/dc$ cd deposit-calc/
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc$ git push
+warning: push.default не установлен; его неявное значение было изменено в Git версии 2.0 с «matching» на «simple». Чтобы прекратить вывод этого сообщения и сохранить старое поведение, используйте:
+
+  git config --global push.default matching
+
+Чтобы прекратить вывод этого сообщения и использовать новое поведение, используйте:
+
+  git config --global push.default simple
+
+Когда push.default установлено в «matching», git будет отправлять изменения локальных веток в существующие внешние ветки с таким же именем.
+
+Начиная с Git версии 2.0, по умолчанию используется более консервативное поведение «simple», которое отправляет изменения текущей ветки в соответствующую внешнюю ветку, из которой «git pull» забирает изменения.
+
+Смотрите «git help config» и ищите «push.default» для дополнительной информации.
+(режим «simple» появился в Git версии 1.7.11. Используйте похожий режим «current» вместо «simple», если вы иногда используете старые версии Git)
+
+Username for 'https://github.com': Crasher746@gmail.com
+Password for 'https://Crasher746@gmail.com@github.com': 
+Подсчет объектов: 31, готово.
+Delta compression using up to 4 threads.
+Сжатие объектов: 100% (27/27), готово.
+Запись объектов: 100% (31/31), 7.69 KiB | 0 bytes/s, готово.
+Total 31 (delta 6), reused 0 (delta 0)
+remote: Resolving deltas: 100% (6/6), done.
+To https://github.com/crasher746/deposit-calc.git
+   c1df440..5b59e97  master -> master
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc$ gedit makefile
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc$ git add makefile
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc$ git commit -m "Work makefile"
+[master 11e85b4] Work makefile
+ 1 file changed, 1 insertion(+)
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc$ cd src/
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/src$ git add deposit.c
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/src$ git commit -m "Realise functions"
+[master d7de82a] Realise functions
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/src$ git add deposit.h
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/src$ git commit -m "Init functions"
+[master 9d17205] Init functions
+ 1 file changed, 1 insertion(+)
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/src$ git add main.c 
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/src$ git commit -m "Main function"
+[master 9ef1d96] Main function
+ 1 file changed, 1 insertion(+)
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/src$ cd
+gregory@gregory-GA-MA770-UD3:~$ cd dc
+gregory@gregory-GA-MA770-UD3:~/dc$ cd deposit-calc/
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc$ cd test/
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/test$ git add 0_deposit_test.c
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/test$ git commit -m "Zero_test"
+[master b7e49a4] Zero_test
+ 1 file changed, 1 insertion(+)
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/test$ git add 1_deposit_test.c
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/test$ git commit -m "First_test"
+[master aa3643f] First_test
+ 1 file changed, 1 insertion(+)
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/test$ git add main.c
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/test$ git commit -m "Init main.c" 
+[master 4a82d46] Init main.c
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/test$ cd
+gregory@gregory-GA-MA770-UD3:~$ cd dc
+gregory@gregory-GA-MA770-UD3:~/dc$ cd deposit-calc/
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc$ cd thirdparty/
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/thirdparty$ git add ctest.h
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/thirdparty$ git commit -m "Include ctest"
+[master 08a959a] Include ctest
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc/thirdparty$ cd
+gregory@gregory-GA-MA770-UD3:~$ cd dc
+gregory@gregory-GA-MA770-UD3:~/dc$ cd deposit-calc/
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc$ git push
+warning: push.default не установлен; его неявное значение было изменено в Git версии 2.0 с «matching» на «simple». Чтобы прекратить вывод этого сообщения и сохранить старое поведение, используйте:
+
+  git config --global push.default matching
+
+Чтобы прекратить вывод этого сообщения и использовать новое поведение, используйте:
+
+  git config --global push.default simple
+
+Когда push.default установлено в «matching», git будет отправлять изменения локальных веток в существующие внешние ветки с таким же именем.
+
+Начиная с Git версии 2.0, по умолчанию используется более консервативное поведение «simple», которое отправляет изменения текущей ветки в соответствующую внешнюю ветку, из которой «git pull» забирает изменения.
+
+Смотрите «git help config» и ищите «push.default» для дополнительной информации.
+(режим «simple» появился в Git версии 1.7.11. Используйте похожий режим «current» вместо «simple», если вы иногда используете старые версии Git)
+
+Username for 'https://github.com': Crasher746@gmail.com
+Password for 'https://Crasher746@gmail.com@github.com': 
+Подсчет объектов: 31, готово.
+Delta compression using up to 4 threads.
+Сжатие объектов: 100% (30/30), готово.
+Запись объектов: 100% (31/31), 3.02 KiB | 0 bytes/s, готово.
+Total 31 (delta 13), reused 0 (delta 0)
+remote: Resolving deltas: 100% (13/13), completed with 6 local objects.
+To https://github.com/crasher746/deposit-calc.git
+   5b59e97..08a959a  master -> master
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc$ CD
+CD: команда не найдена
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc$ dc
+cd
+dc: stack empty
+q
+gregory@gregory-GA-MA770-UD3:~/dc/deposit-calc$ cd
+gregory@gregory-GA-MA770-UD3:~$ cd clony/
+gregory@gregory-GA-MA770-UD3:~/clony$ make
+make: *** Не заданы цели и не найден make-файл.  Останов.
+gregory@gregory-GA-MA770-UD3:~/clony$ cd deposit-calc./
+gregory@gregory-GA-MA770-UD3:~/clony/deposit-calc.$ make
+mkdir -p build
+gcc -c -Wall -Werror -c src/main.c -o build/main.o
+mkdir -p bin
+gcc -c -Wall -Werror -c src/deposit.c -o build/deposit.o
+gcc build/main.o build/deposit.o -o bin/prog 
+gregory@gregory-GA-MA770-UD3:~/clony/deposit-calc.$ ^C
+gregory@gregory-GA-MA770-UD3:~/clony/deposit-calc.$ 
