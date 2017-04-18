@@ -1,4 +1,4 @@
-//Realise functions
+///Realise functions
 #include <stdio.h>
 #include "deposit.h"
 
