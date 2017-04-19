@@ -1,4 +1,4 @@
-//makefile
+#makefile
 CC = gcc
 CFLAGS = -Wall -Werror
 TESTFLAGS = -I src -I thirdparty -Wall -Werror
@@ -37,8 +37,7 @@ $(DIRECTORY_TEST)/0_deposit_test.o: test/0_deposit_test.c
 $(DIRECTORY_TEST)/1_deposit_test.o: test/1_deposit_test.c
 	$(CC) $(TESTFLAGS) -c test/1_deposit_test.c -o $(DIRECTORY_TEST)/1_deposit_test.o
 
-.c.o:
-	$(CC) $(CFLAGS) $< -o $@
+.PHONY: clean
 
 clean:
 	rm -rf *.o *.exe bin/* build/src/*.o build/test/*.o
